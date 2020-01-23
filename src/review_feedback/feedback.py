@@ -33,6 +33,7 @@
 Visual feedback
 """
 
+from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtCore import QPoint, Qt, QTimer
 
@@ -60,16 +61,18 @@ def closeConfirm():
         _timer = None
 
 
-def confirm(msg: str, period: int):
+def confirm(image_path: str, period: int):
     global _timer, _lab
     parent = mw
     closeConfirm()
-    lab = QLabel('<img src="%s" align="center">' % msg, parent)
+    lab = QLabel(parent=parent)
+    img = QPixmap(image_path)
+    lab.setPixmap(img)
     lab.setAttribute(Qt.WA_TranslucentBackground, True)
     lab.setWindowFlags(Qt.ToolTip)
-    centr = parent.frameGeometry().center() - lab.frameGeometry().center()
-    qp = QPoint(lab.width() * 0.25, lab.height() * 0.25)  # type: ignore
-    lab.move(centr - qp)
+    center = parent.frameGeometry().center()
+    qp = QPoint(img.width() * 0.5, img.height() * 0.5)  # type: ignore
+    lab.move(center - qp)
     lab.show()
     _timer = mw.progress.timer(period, closeConfirm, False)
     _lab = lab
