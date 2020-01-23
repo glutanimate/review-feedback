@@ -12,6 +12,10 @@ If you enjoy Visual Feedback for Reviews, please consider supporting my work on 
 
 ## [Unreleased]
 
+## [1.0.0-beta.1] - 2020-01-23
+
+### [Download](https://github.com/glutanimate/review-feedback/releases/tag/v1.0.0-beta.1)
+
 ### Added
 
 - Support for Anki 2.1
@@ -40,7 +44,8 @@ If you enjoy Visual Feedback for Reviews, please consider supporting my work on 
 
 - Initial release of Visual Feedback for Reviews, forked from an earlier add-on by nest0r/Ja-Dark
 
-[Unreleased]: https://github.com/glutanimate/review-feedback/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/glutanimate/review-feedback/compare/v1.0.0-beta.1...HEAD
+[1.0.0-beta.1]: https://github.com/glutanimate/review-feedback/compare/v0.1.1...v1.0.0-beta.1
 [0.1.1]: https://github.com/glutanimate/anjoy/releases/tag/v0.1.1
 
 -----
