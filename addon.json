@@ -1,0 +1,15 @@
+{
+    "display_name": "Visual Feedback for Reviews",
+    "module_name": "review_feedback",
+    "repo_name": "review-feedback",
+    "ankiweb_id": "1749604199",
+    "author": "Glutanimate",
+    "contact": "https://glutanimate.com",
+    "homepage": "https://github.com/glutanimate/review-feedback",
+    "copyright_start": 2017,
+    "tags": "",
+    "conflicts": [],
+    "targets": [
+        "anki21"
+    ]
+}
