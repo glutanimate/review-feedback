@@ -12,11 +12,21 @@ If you enjoy Visual Feedback for Reviews, please consider supporting my work on 
 
 ## [Unreleased]
 
+## [v0.1.1] - 2017-08-06
+
 ### Added
 
-- Initial release of Visual Feedback for Reviews
+- Basic configuration capabilities
 
-[Unreleased]: https://github.com/glutanimate/review-feedback/compare/v0.0.0...HEAD
+## [v0.1.0] - 2017-06-15
+
+### Added
+
+- Initial release of Visual Feedback for Reviews, forked from an earlier add-on by nest0r/Ja-Dark
+
+[Unreleased]: https://github.com/glutanimate/review-feedback/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/glutanimate/anjoy/compare/v0.1.0...v0.1.1
+[0.1.0-alpha.1]: https://github.com/glutanimate/anjoy/releases/tag/v0.1.0
 
 -----
 
