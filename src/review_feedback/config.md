@@ -1,6 +1,7 @@
 Visual Feedback for Reviews supports the following config values:
 
-- `var1` (type): Description. Default: `val`.
+- `feedbackDuration` (integer): Feedback duration in milliseconds. Default: `250`.
+- `imageSet` (string): Image set to use. Can choose between `zen`, `checkmark_dark`, `checkmark_light`. Default: `zen`.
 
 ---
 

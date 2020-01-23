@@ -30,9 +30,46 @@
 # Any modifications to this file must keep this entire header intact.
 
 """
-Module template.
+Visual feedback
 """
 
-def initializeTooltip():
-    from aqt.utils import tooltip
-    tooltip("Visual Feedback for Reviews running!")
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtCore import QPoint, Qt, QTimer
+
+from aqt import mw
+
+try:
+    from typing import Optional
+except ImportError:
+    from .libaddon._vendor.typing import Optional
+
+_lab: Optional[QLabel] = None
+_timer: Optional[QTimer] = None
+
+
+def closeConfirm():
+    global _lab, _timer
+    if _lab:
+        try:
+            _lab.deleteLater()
+        except:  # noqa: E722
+            pass
+        _lab = None
+    if _timer:
+        _timer.stop()
+        _timer = None
+
+
+def confirm(msg: str, period: int):
+    global _timer, _lab
+    parent = mw
+    closeConfirm()
+    lab = QLabel('<img src="%s" align="center">' % msg, parent)
+    lab.setAttribute(Qt.WA_TranslucentBackground, True)
+    lab.setWindowFlags(Qt.ToolTip)
+    centr = parent.frameGeometry().center() - lab.frameGeometry().center()
+    qp = QPoint(lab.width() * 0.25, lab.height() * 0.25)  # type: ignore
+    lab.move(centr - qp)
+    lab.show()
+    _timer = mw.progress.timer(period, closeConfirm, False)
+    _lab = lab
