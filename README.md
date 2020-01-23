@@ -1,4 +1,4 @@
-<p align="center"><img src="screenshots/logo.png"></p>
+<p align="center"><img src="screenshots/zen.png"></p>
 
 <h2 align="center">Visual Feedback for Reviews for Anki</h2>
 
@@ -12,9 +12,9 @@
 <a title="Follow me on Twitter" href="https://twitter.com/intent/user?screen_name=glutanimate"><img src="https://img.shields.io/twitter/follow/glutanimate.svg"></a>
 </p>
 
-> Intro quip
+> Positive reinforcement for your Anki reviews! 
 
-This is an add-on for the spaced-repetition flashcard app [Anki](https://apps.ankiweb.net/).
+This is an add-on for the spaced-repetition flashcard app [Anki](https://apps.ankiweb.net/). It provides users with visual **feedback** for reviews by **flashing** a **small transparent image** at the center of the screen that varies between lapses and passed cards.
 
 ### Table of Contents <!-- omit in toc -->
 
@@ -89,7 +89,6 @@ Visual Feedback for Reviews is free and open-source software. The add-on code th
 Please note that this program uses the [Libaddon](https://github.com/glutanimate/anki-libaddon/) library which comes with [its own additional terms extending the GNU AGPLv3 license](https://github.com/glutanimate/anki-libaddon/blob/master/LICENSE). You may only copy, distribute, or modify the present compilation of this program with Libaddon under the combined licensing terms specified by both licenses.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
-
 
 ----
 
