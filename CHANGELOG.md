@@ -12,6 +12,22 @@ If you enjoy Visual Feedback for Reviews, please consider supporting my work on 
 
 ## [Unreleased]
 
+### Added
+
+- Support for Anki 2.1
+- Configuration via Anki's built-in config dialog
+- New `imageSet` option, providing the ability to quickly switch between different image sets
+- Support for installing additional image sets via the `user_files` directory
+
+### Fixed
+
+- Fixed off-center image position (thanks to @zavarka for the report)
+
+### Changed
+
+- Dropped Anki 2.0 support
+- Mostly rewrote the add-on
+
 ## [v0.1.1] - 2017-08-06
 
 ### Added
