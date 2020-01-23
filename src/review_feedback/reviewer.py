@@ -56,7 +56,7 @@ class MediaPaths(NamedTuple):
 
 def _getImagePaths(set_name: str) -> Optional[MediaPaths]:
     default_path = Path(PATH_THIS_ADDON) / "images"
-    user_path = Path(pathUserFiles())
+    user_path = Path(pathUserFiles()) / "images"
 
     for path in (default_path, user_path):
         path_passed = path / set_name / _passed_name
@@ -77,7 +77,7 @@ def onAnswerCard(reviewer: Reviewer, ease: int):
     if image_paths is None:
         showWarning(
             f"{ADDON.NAME} is not configured correctly: Could not find images for "
-            f"{image_set} image set. Please reset the configuration to the defaults "
+            f"'{image_set}'' image set. Please reset the configuration to the defaults "
             "and try again. If that does not work, please redownload the add-on."
         )
         return
