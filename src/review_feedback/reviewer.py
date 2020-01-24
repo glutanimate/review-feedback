@@ -102,5 +102,5 @@ def initializeReviewer():
         from aqt.gui_hooks import reviewer_did_answer_card
 
         reviewer_did_answer_card.append(onAnswerCard)
-    except (ImportError, AttributeError):  # Anki < 2.1.20
+    except (ImportError, ModuleNotFoundError):  # Anki < 2.1.20
         Reviewer._answerCard = wrap(Reviewer._answerCard, onAnswerCardWrapper, "around")
