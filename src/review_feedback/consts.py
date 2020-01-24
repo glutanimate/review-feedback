@@ -36,28 +36,30 @@ Addon-wide constants
 from ._version import __version__
 
 try:
-    from .data.patrons import MEMBERS_CREDITED, MEMBERS_TOP
+    from .data.patrons import MEMBERS_CREDITED, MEMBERS_TOP  # type: ignore
 except ImportError:
     MEMBERS_CREDITED = MEMBERS_TOP = ()
 
 
-__all__ = [
-    "ADDON"
-]
+__all__ = ["ADDON"]
 
 
 class ADDON(object):
     """Class storing general add-on properties
     Property names need to be all-uppercase with no leading underscores
     """
+
     NAME = "Visual Feedback for Reviews"
     MODULE = "review_feedback"
     ID = "1749604199"
     VERSION = __version__
     LICENSE = "GNU AGPLv3"
     AUTHORS = (
-        {"name": "Aristotelis P. (Glutanimate)", "years": "2017-2020",
-         "contact": "Glutanimate"},
+        {
+            "name": "Aristotelis P. (Glutanimate)",
+            "years": "2017-2020",
+            "contact": "Glutanimate",
+        },
     )
     AUTHOR_MAIL = "ankiglutanimate [αt] gmail . com"
     LIBRARIES = ()
@@ -73,5 +75,5 @@ class ADDON(object):
         "rate": "https://ankiweb.net/shared/review/{}".format(ID),
         "twitter": "https://twitter.com/glutanimate",
         "youtube": "https://www.youtube.com/c/glutanimate",
-        "help": ""
+        "help": "",
     }
