@@ -41,9 +41,9 @@ from .config import config
 from .consts import ADDON
 
 try:
-    from typing import Optional, NamedTuple
+    from typing import Optional, NamedTuple, Callable
 except ImportError:
-    from .libaddon._vendor.typing import Optional, NamedTuple
+    from .libaddon._vendor.typing import Optional, NamedTuple, Callable
 
 _lapsed_name = "passed.png"
 _passed_name = "lapsed.png"
@@ -88,5 +88,19 @@ def onAnswerCard(reviewer: Reviewer, ease: int):
         confirm(image_paths.lapsed, duration)
 
 
+def onAnswerCardWrapper(reviewer: Reviewer, ease: int, _old: Callable):
+    """Legacy wrapper for Anki <2.1.20"""
+    if reviewer.mw.state != "review" or reviewer.state != "answer":
+        return
+    ret = _old(reviewer, ease)
+    onAnswerCard(reviewer, ease)
+    return ret
+
+
 def initializeReviewer():
-    Reviewer._answerCard = wrap(Reviewer._answerCard, onAnswerCard, "after")
+    try:
+        from aqt.gui_hooks import reviewer_did_answer_card
+
+        reviewer_did_answer_card.append(onAnswerCard)
+    except (ImportError, AttributeError):  # Anki < 2.1.20
+        Reviewer._answerCard = wrap(Reviewer._answerCard, onAnswerCardWrapper, "around")
