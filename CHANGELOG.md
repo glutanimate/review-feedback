@@ -12,6 +12,10 @@ If you enjoy Visual Feedback for Reviews, please consider supporting my work on 
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed incompatibility with other add-ons using libaddon (typing-related vendoring troubles on Anki <2.1.16)
+
 ## [1.0.0-beta.1] - 2020-01-23
 
 ### [Download](https://github.com/glutanimate/review-feedback/releases/tag/v1.0.0-beta.1)
