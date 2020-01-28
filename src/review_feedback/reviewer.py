@@ -40,10 +40,7 @@ from .feedback import confirm
 from .config import config
 from .consts import ADDON
 
-try:
-    from typing import Optional, NamedTuple, Callable
-except ImportError:
-    from .libaddon._vendor.typing import Optional, NamedTuple, Callable
+from typing import Optional, NamedTuple, Callable
 
 _lapsed_name = "passed.png"
 _passed_name = "lapsed.png"

@@ -39,10 +39,7 @@ from PyQt5.QtCore import QPoint, Qt, QTimer
 
 from aqt import mw
 
-try:
-    from typing import Optional
-except ImportError:
-    from .libaddon._vendor.typing import Optional
+from typing import Optional
 
 _lab: Optional[QLabel] = None
 _timer: Optional[QTimer] = None
