@@ -66,6 +66,7 @@ def confirm(image_path: str, period: int):
     img = QPixmap(image_path)
     lab.setPixmap(img)
     lab.setAttribute(Qt.WA_TranslucentBackground, True)
+    lab.setAutoFillBackground(False)
     lab.setWindowFlags(Qt.ToolTip)
     center = parent.frameGeometry().center()
     qp = QPoint(img.width() * 0.5, img.height() * 0.5)  # type: ignore
