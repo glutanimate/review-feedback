@@ -34,12 +34,12 @@ Initializes add-on components.
 """
 
 from ._version import __version__  # noqa: F401
-from .libaddon import registerLegacyVendorDir
 
 try:
     import typing  # noqa: F401
     import types  # noqa: F401
 except ImportError:
+    from .libaddon import registerLegacyVendorDir
     registerLegacyVendorDir()
 
 def checkFor2114ImportError():
