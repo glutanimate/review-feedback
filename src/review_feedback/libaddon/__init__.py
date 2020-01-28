@@ -46,8 +46,10 @@ from ._version import __version__  # noqa: F401
 def registerLegacyVendorDir():
     """Some modules like "typing" cannot be properly vendorized, so fall back
     to hacky sys.path modifications if necessary
+    NOTE: make sure not to use vendored legacy dependencies before running this
     """
     import sys
     import os
 
-    sys.path.insert(0, os.path.join(os.path.basename(__file__), "_vendor_legacy"))
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "_vendor_legacy"))
+    print(sys.path)
