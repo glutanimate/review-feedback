@@ -32,6 +32,7 @@
 from pathlib import Path
 
 from anki.hooks import wrap
+from anki.cards import Card
 from aqt.reviewer import Reviewer
 from aqt.utils import showWarning
 
@@ -65,7 +66,7 @@ def _getImagePaths(set_name: str) -> Optional[MediaPaths]:
     return None
 
 
-def onAnswerCard(reviewer: Reviewer, ease: int):
+def onAnswerCard(reviewer: Reviewer, card: Card, ease: int):
     image_set = config["local"]["imageSet"]
     duration = config["local"]["feedbackDuration"]
 
@@ -90,7 +91,7 @@ def onAnswerCardWrapper(reviewer: Reviewer, ease: int, _old: Callable):
     if reviewer.mw.state != "review" or reviewer.state != "answer":
         return
     ret = _old(reviewer, ease)
-    onAnswerCard(reviewer, ease)
+    onAnswerCard(reviewer, reviewer.card, ease)
     return ret
 
 
