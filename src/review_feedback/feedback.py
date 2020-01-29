@@ -33,7 +33,7 @@
 Visual feedback
 """
 
-from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtCore import QPoint, Qt, QTimer
 
@@ -67,7 +67,9 @@ def confirm(image_path: str, period: int):
     lab.setPixmap(img)
     lab.setAttribute(Qt.WA_TranslucentBackground, True)
     lab.setAutoFillBackground(False)
-    lab.setWindowFlags(Qt.ToolTip)
+    lab.setWindowFlags(
+        Qt.ToolTip | Qt.FramelessWindowHint | Qt.NoDropShadowWindowHint  # type: ignore
+    )
     center = parent.frameGeometry().center()
     qp = QPoint(img.width() * 0.5, img.height() * 0.5)  # type: ignore
     lab.move(center - qp)
