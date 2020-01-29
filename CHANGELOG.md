@@ -12,6 +12,15 @@ If you enjoy Visual Feedback for Reviews, please consider supporting my work on 
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed black image background on Windows
+- Fixed support for Anki 2.1.20 beta6
+
+### Changed
+
+- Removed image drop shadow on macOS to bring the visuals in line with other platforms
+
 ## [1.0.0-beta.2] - 2020-01-28
 
 ### [Download](https://github.com/glutanimate/review-feedback/releases/tag/v1.0.0-beta.2)
