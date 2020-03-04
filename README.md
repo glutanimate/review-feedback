@@ -1,4 +1,4 @@
-<p align="center"><img src="screenshots/zen.png"></p>
+<p align="center"><img src="screenshots/reviewer.gif"></p>
 
 <h2 align="center">Visual Feedback for Reviews for Anki</h2>
 
