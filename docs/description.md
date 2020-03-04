@@ -2,7 +2,7 @@
 
 Provides **feedback** for reviews by **flashing** a **small transparent image** at the center of your screen that varies between lapses and passed cards.
 
-![](https://raw.githubusercontent.com/glutanimate/review-feedback/master/screenshots/zen.png)
+![](https://raw.githubusercontent.com/glutanimate/review-feedback/master/screenshots/reviewer.gif)
 
 ### USAGE
 
