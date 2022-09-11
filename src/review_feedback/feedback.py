@@ -71,7 +71,8 @@ def confirm(image_path: str, period: int):
         Qt.ToolTip | Qt.FramelessWindowHint | Qt.NoDropShadowWindowHint  # type: ignore
     )
     center = parent.frameGeometry().center()
-    qp = QPoint(img.width() * 0.5, img.height() * 0.5)  # type: ignore
+    qp = QPoint(round(img.width() * 0.5),
+                round(img.height() * 0.5))  # type: ignore
     lab.move(center - qp)
     lab.show()
     _timer = mw.progress.timer(period, closeConfirm, False)
