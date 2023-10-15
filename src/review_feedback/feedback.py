@@ -33,13 +33,19 @@
 Visual feedback
 """
 
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QLabel
-from PyQt5.QtCore import QPoint, Qt, QTimer
+from typing import TYPE_CHECKING, Optional
 
 from aqt import mw
+from aqt.qt import qtmajor
 
-from typing import Optional
+if TYPE_CHECKING or qtmajor >= 6:
+    from PyQt6.QtGui import QImage, QPixmap
+    from PyQt6.QtWidgets import QLabel
+    from PyQt6.QtCore import QPoint, Qt, QTimer
+else:
+    from PyQt5.QtGui import QImage, QPixmap
+    from PyQt5.QtWidgets import QLabel
+    from PyQt5.QtCore import QPoint, Qt, QTimer
 
 _lab: Optional[QLabel] = None
 _timer: Optional[QTimer] = None
